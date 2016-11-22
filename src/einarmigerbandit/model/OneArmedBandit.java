@@ -13,33 +13,34 @@ import Logger.OhmLogger;
  */
 public class OneArmedBandit
 {
-    private Counter c1;
-    private Counter c2;
-    private Counter c3;
+    private Counter[] counters;
     private OhmLogger oL;
     private boolean started;
     public OneArmedBandit() 
     {
-        this.c1 = new Counter();
-        this.c2 = new Counter();
-        this.c3 = new Counter();
+        counters = new Counter[3];
+        for(Counter i:counters)
+        {
+          i = new Counter();
+        }      
         this.oL = OhmLogger.getInstance();
         started = false;
+        oL.getLogger().info("Begin of logging");
     }
 
   public Counter getC1()
   {
-    return c1;
+    return counters[0];
   }
 
   public Counter getC2()
   {
-    return c2;
+    return counters[1];
   }
 
   public Counter getC3()
   {
-    return c3;
+    return counters[2];
   }
 
   public boolean isStarted()
@@ -51,9 +52,11 @@ public class OneArmedBandit
   {
     this.started = started;
 
-    c1.setStarted(started);
-    c2.setStarted(started);
-    c3.setStarted(started);
+    for(Counter i:counters)
+    {
+      i.setStarted(started);
+    }
+    oL.getLogger().info("Started Counters.");
   }
     
     
