@@ -2,13 +2,10 @@ package Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashSet;
 import java.util.Properties;
-import java.util.Set;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import jdk.nashorn.internal.codegen.CompilerConstants;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,7 +14,7 @@ import jdk.nashorn.internal.codegen.CompilerConstants;
  */
 
 /**
- *
+ * singleton class, which manages the instance of the according OhmLogger
  * @author kevin
  */
 public class OhmLogger {
@@ -28,7 +25,11 @@ public class OhmLogger {
         lg = null;
     }
     
-    public static OhmLogger getInstance() {
+  /**
+   * method to return the single instance of the OhmLogger
+   * @return
+   */
+  public static OhmLogger getInstance() {
         return OhmLoggerHolder.INSTANCE;
     }
     
@@ -37,7 +38,11 @@ public class OhmLogger {
         private static final OhmLogger INSTANCE = new OhmLogger();
     }
     
-    public static Logger getLogger()
+  /**
+   *
+   * @return returns the OhmLogger instance
+   */
+  public static Logger getLogger()
     {
         if(lg == null)
         {

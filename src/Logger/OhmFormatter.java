@@ -14,7 +14,7 @@ import java.util.logging.SimpleFormatter;
  */
 
 /**
- *
+ * class to format logging messages according to a given schema
  * @author kevin
  */
 public class OhmFormatter extends SimpleFormatter
@@ -24,6 +24,12 @@ public class OhmFormatter extends SimpleFormatter
   
   public OhmFormatter(){}
   
+  /**
+   *
+   * @param record is the message record which provides all logging information
+   * @return
+   */
+  @Override
   public String format(LogRecord record)
   {
         StringBuilder builder = new StringBuilder(1000);
