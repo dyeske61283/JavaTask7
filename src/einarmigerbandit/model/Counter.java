@@ -14,7 +14,7 @@ import java.util.Random;
  */
 public class Counter extends Observable implements Runnable
 {
-    private final static int Bound = 10;
+    private final static int Bound = 9;
   
   private Thread thd;
   private int Augen;

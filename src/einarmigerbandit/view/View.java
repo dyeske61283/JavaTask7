@@ -33,6 +33,7 @@ public class View extends javax.swing.JFrame {
 
     jPanel1 = new javax.swing.JPanel();
     btnStart = new javax.swing.JButton();
+    tfCredit = new javax.swing.JTextField();
     btnStop = new javax.swing.JButton();
     jPanel2 = new javax.swing.JPanel();
     tfCounterLeft = new javax.swing.JTextField();
@@ -46,6 +47,15 @@ public class View extends javax.swing.JFrame {
 
     btnStart.setText("Start");
     jPanel1.add(btnStart, new java.awt.GridBagConstraints());
+
+    tfCredit.setEditable(false);
+    tfCredit.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+    tfCredit.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+    tfCredit.setText("$  $  $");
+    tfCredit.setToolTipText("Credits");
+    tfCredit.setEnabled(false);
+    tfCredit.setFocusable(false);
+    jPanel1.add(tfCredit, new java.awt.GridBagConstraints());
 
     btnStop.setText("Stop");
     jPanel1.add(btnStop, new java.awt.GridBagConstraints());
@@ -90,6 +100,11 @@ public class View extends javax.swing.JFrame {
     public JButton getBtnStart() {
         return btnStart;
     }
+
+  public JTextField getTfCredit()
+  {
+    return tfCredit;
+  }
 
     public JButton getBtnStop() {
         return btnStop;
@@ -150,5 +165,6 @@ public class View extends javax.swing.JFrame {
   private javax.swing.JTextField tfCounterCenter;
   private javax.swing.JTextField tfCounterLeft;
   private javax.swing.JTextField tfCounterRight;
+  private javax.swing.JTextField tfCredit;
   // End of variables declaration//GEN-END:variables
 }

@@ -27,9 +27,7 @@ public class Adapter implements Observer
 
    public void registerEvents()
   {
-    model.getC1().addObserver(this);
-    model.getC2().addObserver(this);
-    model.getC3().addObserver(this);
+    this.model.addObserver(this);
   }
   @Override
   public void update(Observable o, Object arg)
@@ -38,11 +36,13 @@ public class Adapter implements Observer
     int zahlMitte = this.model.getC2().getAugen();
     int zahlRechts = this.model.getC3().getAugen();
     
+    int recentCredit = this.model.getCredit();
+    
     this.view.getTfCounterLeft().setText(String.valueOf(zahlLinks)); 
     this.view.getTfCounterCenter().setText(String.valueOf(zahlMitte));
     this.view.getTfCounterRight().setText(String.valueOf(zahlRechts));
     
-    
+    this.view.getTfCredit().setText(String.valueOf(recentCredit));
 //    if((zahlLinks == zahlMitte && zahlLinks == zahlRechts )&& 
 //       !this.model.isStarted())
 //    {

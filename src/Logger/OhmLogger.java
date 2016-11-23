@@ -72,6 +72,8 @@ public class OhmLogger {
             String logLevel = props.getProperty("LOG_LEVEL");
             lg.setLevel(Level.parse(logLevel));  
             
+            lg.setUseParentHandlers(false);
+            
         }
         catch(IOException ex)
         {
